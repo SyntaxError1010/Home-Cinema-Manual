@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /> <!-- Sets the character encoding to UTF-8 (standard for modern web) -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- Ensures responsive scaling on mobile -->
+  <title>🎬 Cinema System Manual</title> <!-- The tab/browser title -->
+
+  <style>
+    /* ---------- CSS Variables (custom properties) ---------- */
+    :root{
+      --bg: #f7f8fb;           /* Background gradient start */
+      --card: #ffffff;         /* Card background color */
+      --accent: #0f62fe;       /* Accent blue for buttons/numbers */
+      --muted: #6b7280;        /* Muted gray text */
+      --radius: 12px;          /* Corner rounding */
+      --maxw: 780px;           /* Max width for content container */
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box} /* Include padding & border in element width/height */
+
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#eef2ff 120px); /* Soft top gradient */
+      display:flex;                /* Centers content */
+      justify-content:center;
+      padding:60px 20px;           /* Space around content */
+      color:#0f172a;               /* Default text color */
+      line-height:1.45;            /* Readable line height */
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--maxw);       /* Responsive max width */
+      background:var(--card);      /* White card background */
+      border-radius:var(--radius);
+      box-shadow: 0 8px 30px rgba(15,23,42,0.08); /* Soft shadow */
+      padding:28px;
+      border:1px solid rgba(15,23,42,0.03);
+      min-height:100%;             /* Allow container to grow */
+      padding-bottom:40px;         /* Extra breathing room */
+    }
+
+    header{
+      margin-bottom:16px;          /* Space below header */
+    }
+
+    h1{
+      margin:0;
+      font-size:1.5rem;
+      display:flex;
+      align-items:center;
+      gap:10px;                    /* Space between emoji + text */
+    }
+
+    .subtitle{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:0.94rem;           /* Slightly smaller subtext */
+    }
+
+    /* ---------- Ordered List Styling ---------- */
+    ol.steps{
+      margin:18px 0 0 0;
+      padding-left:0;
+      list-style:none;             /* Remove default numbers */
+      counter-reset:step;          /* Allows custom numbering if needed */
+      display:grid;
+      gap:16px;                    /* Space between steps */
+    }
+
+    .step{
+      border-radius:10px;
+      padding:14px;
+      background:linear-gradient(180deg, rgba(15,99,255,0.02), rgba(255,255,255,0));
+      border:1px solid rgba(15,23,42,0.08);
+    }
+
+    /* ---------- Step Header (index + title) ---------- */
+    .step-header{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .step-index{
+      width:36px;
+      height:36px;
+      flex:0 0 36px;               /* Fix width and height */
+      border-radius:8px;
+      background:rgba(15,99,255,0.08);
+      color:var(--accent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+
+    .step-title{
+      font-weight:600;
+      font-size:1rem;
+      color:#071033;
+    }
+
+    /* ---------- Step Body (instructions) ---------- */
+    .step-body{
+      margin-top:10px;
+      color:#0b1220;
+      font-size:0.98rem;
+      padding-left:48px;          /* Indent to align with titles */
+    }
+
+    .step summary{
+      list-style:none;             /* Remove default disclosure triangle */
+    }
+
+    /* On smaller screens, remove left indent */
+    @media (max-width:520px){
+      .step-body{padding-left:0}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Main content container -->
+  <main class="container" id="content" role="main" aria-labelledby="main-title">
+    
+    <!-- Page header -->
+    <header id="main-title">
+      <h1>🎬 AFZAM Cinema System Manual</h1>
+      <div class="subtitle">Quick step-by-step instructions to get the home cinema running</div>
+    </header>
+
+    <!-- Collapsable Ordered list of steps -->
+    <!-- Streaming -->
+     <div class="step" style="margin-top: 10px; margin-bottom: 10px;">
+      <details style="cursor: pointer;">
+        <summary class="step-title">📺 Streaming</summary>
+        <ol class="steps">
+          <!-- Step 1 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">1</div>
+                <div class="step-title">Turn on the Projector</div>
+              </summary>
+              <div class="step-body">
+                • Use the Panasonic projector remote to power it on.<br>
+                • Wait a few moments for the projector to initialize and the lens to warm up.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 2 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">2</div>
+                <div class="step-title">Turn on the Projector Fans</div>
+              </summary>
+              <div class="step-body">
+                • Use the mini remote to power on the fans.<br>
+                • You should hear them start to spin.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 3 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">3</div>
+                <div class="step-title">Turn on the Power Strip</div>
+              </summary>
+              <div class="step-body">
+                • Locate the power strip on the opposite side of the wall from the cinema system.<br>
+                • Flip the switch on its left side. You should see its blue light turn on.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 4 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">4</div>
+                <div class="step-title">Turn on the V444ES System</div>
+              </summary>
+              <div class="step-body">
+                • Press the power button on the V444ES unit.<br>
+                • Wait for the system to fully power up. You may see indicator lights confirming it’s ready.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 5 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">5</div>
+                <div class="step-title">Turn on the Roku</div>
+              </summary>
+              <div class="step-body">
+                • Use the Roku remote to power it on.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 6 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">6</div>
+                <div class="step-title">Set the projector input to RGB1</div>
+              </summary>
+              <div class="step-body">
+                • Using the projector remote, press the RGB1 button.<br>
+                • This ensures the projector is showing the video from the V444ES system.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 7 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">7</div>
+                <div class="step-title">Set the V444ES system to DVD/LD mode</div>
+              </summary>
+              <div class="step-body">
+                • Check the V444ES display to see its current mode.<br>
+                • If it’s not already in DVD/LD mode, rotate the function dial until the display reads DVD/LD.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 8 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">8</div>
+                <div class="step-title">Set the V444ES audio to Analog Direct</div>
+              </summary>
+              <div class="step-body">
+                • Look at the V444ES display to see its current mode.<br>
+                • Press the Analog Direct button on the V444ES if it’s not already active.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 9 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">9</div>
+                <div class="step-title">Start enjoying your home cinema</div>
+              </summary>
+              <div class="step-body">
+                • At this point, the projector, V444ES system, and Roku are all properly set.<br>
+                • Play your movie, show, or video and enjoy the full cinema experience!
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 10 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">10</div>
+                <div class="step-title">Turn Everything Off</div>
+              </summary>
+              <div class="step-body">
+                • When you’re finished, turn off the projector, projector fans, V444ES system, and power strip.<br>
+                • This helps conserve energy and prolongs the lifespan of the equipment.
+              </div>
+            </details>
+          </li>
+
+        </ol>
+      </details>
+     </div>
+
+    <!-- DVD/CD -->
+     <div class="step" style="margin-top: 10px; margin-bottom: 10px;">
+      <details style="cursor: pointer;">
+        <summary class="step-title">📀 DVD/CD</summary>
+        <ol class="steps">
+          <!-- Step 1 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">1</div>
+                <div class="step-title">Turn on the Projector</div>
+              </summary>
+              <div class="step-body">
+                • Use the Panasonic projector remote to power it on.<br>
+                • Wait a few moments for the projector to initialize and the lens to warm up.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 2 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">2</div>
+                <div class="step-title">Turn on the Projector Fans</div>
+              </summary>
+              <div class="step-body">
+                • Use the mini remote to power on the fans.<br>
+                • You should hear them start to spin.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 3 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">3</div>
+                <div class="step-title">Turn on the Sony DVD Player</div>
+              </summary>
+              <div class="step-body">
+                • Locate the power button on the Sony DVD player and press it.<br>
+                • Wait for the player to initialize.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 4 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">4</div>
+                <div class="step-title">Turn on the V444ES System</div>
+              </summary>
+              <div class="step-body">
+                • Press the power button on the V444ES unit.<br>
+                • Wait for the system to fully power up. You may see indicator lights confirming it’s ready.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 5 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">5</div>
+                <div class="step-title">Insert DVD/CD into the Player</div>
+              </summary>
+              <div class="step-body">
+                • Press the 'Open' button on the Sony DVD player.
+                • Insert your DVD or CD.
+                • Press the 'Close' button.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 6 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">6</div>
+                <div class="step-title">Set the projector input to RGB1</div>
+              </summary>
+              <div class="step-body">
+                • Using the projector remote, press the RGB1 button.<br>
+                • This ensures the projector is showing the video from the V444ES system.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 7 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">7</div>
+                <div class="step-title">Set the V444ES system to TV/SAT mode</div>
+              </summary>
+              <div class="step-body">
+                • Check the V444ES display to see its current mode.<br>
+                • If it’s not already in TV/SAT mode, rotate the function dial until the display reads TV/SAT.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 8 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">8</div>
+                <div class="step-title">Set the V444ES audio to Analog Direct</div>
+              </summary>
+              <div class="step-body">
+                • Look at the V444ES display to see its current mode.<br>
+                • Press the Analog Direct button on the V444ES if it’s not already active.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 9 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">9</div>
+                <div class="step-title">Start enjoying your home cinema</div>
+              </summary>
+              <div class="step-body">
+                • At this point, the projector, V444ES system, and DVD player are all properly set.<br>
+                • Play your DVD or CD and enjoy the full cinema experience!
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 10 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">10</div>
+                <div class="step-title">Turn Everything Off</div>
+              </summary>
+              <div class="step-body">
+                • When you’re finished, turn off the projector, projector fans, V444ES system, DVD player, and power strip.<br>
+                • This helps conserve energy and prolongs the lifespan of the equipment.
+              </div>
+            </details>
+          </li>
+
+        </ol>
+      </details>
+     </div>
+
+    <!-- Audio Streaming-->
+     <div class="step" style="margin-top: 10px; margin-bottom: 10px;">
+      <details style="cursor: pointer;">
+      <summary class="step-title">🎵 Audio Streaming</summary>
+        <ol class="steps">
+          <!-- Step 1 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">1</div>
+                <div class="step-title">Power on the wall switch</div>
+              </summary>
+              <div class="step-body">
+                • Locate the power strip on the opposite side of the wall from the cinema system.<br>
+                • Flip the switch on its left side. You should see its blue light turn on.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 2 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">2</div>
+                <div class="step-title">Turn on the V444ES System</div>
+              </summary>
+              <div class="step-body">
+                • Press the power button on the V444ES unit.<br>
+                • Wait for the system to fully power up. You may see indicator lights confirming it’s ready.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 3 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">3</div>
+                <div class="step-title">Airplay your Phone to the S10+ Audio Streamer</div>
+              </summary>
+              <div class="step-body">
+                • Swipe down from the top right corner of your iPhone to access Control Center.<br>
+                • Tap on the Airplay symbol in the top right corner and select "S10+ Audio Streamer" from the list.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 4 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">4</div>
+                <div class="step-title">Set the V444ES audio to Analog Direct</div>
+              </summary>
+              <div class="step-body">
+                • Look at the V444ES display to see its current mode.<br>
+                • Press the Analog Direct button on the V444ES if it’s not already active.
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 5 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">5</div>
+                <div class="step-title">Start enjoying the speaker system</div>
+              </summary>
+              <div class="step-body">
+                • At this point, the V444ES system and S10+ Audio Streamer are all properly set.<br>
+                • Play your music and enjoy the full sound system experience!
+              </div>
+            </details>
+          </li>
+
+          <!-- Step 6 -->
+          <li class="step">
+            <details>
+              <summary class="step-header">
+                <div class="step-index">6</div>
+                <div class="step-title">Turn Everything Off</div>
+              </summary>
+              <div class="step-body">
+                • When you’re finished, turn off the V444ES system and power strip.<br>
+                • This helps conserve energy and prolongs the lifespan of the equipment.
+              </div>
+            </details>
+          </li>
+        </ol>
+      </details>
+     </div>
+  </main>
+</body>
+</html>
